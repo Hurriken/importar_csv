@@ -20,6 +20,6 @@
         ]
     },
     "require": {
-        
+        "coffeecode/datalayer": "^1.0"
     }
 }
