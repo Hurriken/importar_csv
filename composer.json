@@ -1,0 +1,25 @@
+{
+    "name": "hurriken/importar_csv",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anand Devesh Gouveia",
+            "email": "devesh.gouveia@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "config":{
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\": "source/"
+        },
+        "files": [
+            "source/Config.php"
+        ]
+    },
+    "require": {
+        
+    }
+}
