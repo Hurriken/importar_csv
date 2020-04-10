@@ -2,9 +2,10 @@
 
 namespace Source\Models;
 
-use CoffeCode\Datalayer\Datalayer;
+use CoffeeCode\DataLayer\DataLayer;
 
-class Niceanatelech extends Datalayer
+
+class Niceanatelech extends DataLayer
 {
     public function __construct()
     {

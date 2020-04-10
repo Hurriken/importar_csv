@@ -13,3 +13,12 @@ define("DATA_LAYER_CONFIG", [
         PDO::ATTR_CASE => PDO::CASE_NATURAL
     ]
 ]);
+
+define("CONF_SMTP_MAIL",[
+    "host" => "",
+    "port" => "",
+    "user" => "",
+    "pass" => "",
+    "from_name" => "INSERIR O SEU NOME",
+    "from_email" => "INSERIR O SEU E-MAIL"
+]);

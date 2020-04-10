@@ -1,6 +1,7 @@
 {
     "name": "hurriken/importar_csv",
     "license": "MIT",
+    "description": "",
     "authors": [
         {
             "name": "Anand Devesh Gouveia",
@@ -20,6 +21,7 @@
         ]
     },
     "require": {
-        "coffeecode/datalayer": "^1.0"
+        "coffeecode/datalayer": "^1.0",
+        "phpmailer/phpmailer": "^6.1"
     }
 }
