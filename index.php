@@ -1,24 +1,49 @@
 <?php
-
-use League\Csv\Reader;
-use League\Csv\Statement;
-use Source\Models\NicePincisco;
-
 require __DIR__ . "/vendor/autoload.php";
 
+use CoffeeCode\Router\Router;
 
-$nicepincisco = new NicePincisco();
+$router = new Router(ROOT);
 
-$stream = fopen(__DIR__."/storage/consolidado.csv", "r");
-$csv = Reader::createFromStream($stream);
+/*
+* Controllers
+*/
+$router->namespace("Source\App");
 
-$csv->setDelimiter(",");
-$csv->setHeaderOffset(0);
+/* WEB
+* home
+*/
+$router->group(null);
+$router->get("/", "Web:home","web.home");
 
-$stmt = (new Statement());
+/* JAR
+* home
+* importar
+*/
+$router->group("jar");
+$router->get("/", "Jar:home", "jar.home");
+$router->post("/importar", "Jar:importar", "jar.importar");
 
-$nicepincisco = $stmt->process($csv);
 
-foreach ($nicepincisco as $nice){
-    var_dump($nice);
+$router->group("teste");
+$router->get("/",function($data){
+    echo "teste" . PHP_EOL;
+    
+    phpinfo();
+
+});
+
+/*
+* ERROS
+*/
+$router->group("ooops");
+$router->get("/{errcode}",function($data){
+    echo "<h1>Erro {$data["errcode"]}</h1>";
+});
+
+$router->dispatch();
+
+if($router->error()){
+    
+    $router->redirect("/ooops/{$router->error()}");
 }
